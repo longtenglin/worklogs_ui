@@ -17,6 +17,12 @@ export const menuList: MenuItemList = [
           {
             title: "title_2_sub_1_sub_1",
             icon: "icon_2_sub_1_sub_1",
+            subMenu: [
+              {
+                title: "title_2_sub_1_sub_1_sub_1",
+                icon: "icon_2_sub_1_sub_1_sub_1",
+              }
+            ]
           }
           , {
             title: "title_2_sub_1_sub_2",
