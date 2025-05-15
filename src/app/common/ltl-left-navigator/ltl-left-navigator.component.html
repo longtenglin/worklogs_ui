@@ -1,0 +1,19 @@
+<main class="left-navigator">
+  <mat-tree #tree class="ltl-mat-tree" [dataSource]="menuList" [childrenAccessor]="childrenAccessor">
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+      <button mat-icon-button disabled></button>
+      {{node.title}}
+    </mat-tree-node>
+
+    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding matTreeNodeToggle
+                   [cdkTreeNodeTypeaheadLabel]="node.title">
+      <button mat-icon-button matTreeNodeToggle
+              [attr.aria-label]="'Toggle ' + node.title">
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{tree.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+      {{node.title}}
+    </mat-tree-node>
+  </mat-tree>
+</main>
