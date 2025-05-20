@@ -1,0 +1,25 @@
+.log-item-header {
+  height: 50px;
+  width: 100%;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.log-item-header .log-item-name {
+  flex: 1;
+}
+
+.log-item-header .log-item-user {
+  width: 150px;
+  background: white;
+}
+
+.log-item-header .log-item-datetime {
+  width: 200px;
+  background: gray;
+}
+
+.log-item-header .log-item-down {
+
+}
