@@ -1,12 +1,20 @@
 .work-log-item {
   min-height: 50px;
+  padding: 0 20px;
 }
 
 .work-log-header {
-
+  .ltl-body-card {
+    border-radius: 0;
+  }
 }
 
 .work-log-content {
+
+  .log-body-card {
+    height: 400px;
+    border-radius: 0;
+  }
 }
 
 

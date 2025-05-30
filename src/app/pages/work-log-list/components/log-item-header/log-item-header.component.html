@@ -1,5 +1,7 @@
 <div class="log-item-header">
-  <app-ltl-log-type type="BUG"/>
+  <div class="log-item-type">
+    <app-ltl-log-type [type]="logType"/>
+  </div>
 
   <div class="log-item-name">
     <span>{{"log-item-name"}}</span>
@@ -13,7 +15,8 @@
     <span class="datetime">{{"2025-05-19 14:16:21"}}</span>
   </div>
 
-  <div class="log-item-down">
-    <mat-icon>home</mat-icon>
+  <div class="log-item-down" (click)="isExpandEvent()">
+    <mat-icon *ngIf="!isExpanded">expand_more</mat-icon>
+    <mat-icon *ngIf="isExpanded">expand_less</mat-icon>
   </div>
 </div>

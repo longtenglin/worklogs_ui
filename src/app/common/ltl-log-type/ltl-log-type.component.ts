@@ -8,7 +8,7 @@ import {Component, Input} from '@angular/core';
   styleUrl: './ltl-log-type.component.scss'
 })
 export class LtlLogTypeComponent {
-  @Input() type: string = LogType.BUG;
+  @Input() type: LogType = LogType.BUG;
 }
 
 export enum LogType {

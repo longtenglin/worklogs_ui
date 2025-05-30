@@ -1,25 +1,48 @@
 .log-item-header {
   height: 50px;
   width: 100%;
-  margin: 0 20px;
   display: flex;
   align-items: center;
 }
 
+.log-item-type {
+  margin: 0 10px 0 20px;
+}
+
 .log-item-header .log-item-name {
   flex: 1;
+  padding: 0 15px;
+  overflow: hidden; /* 隐藏溢出的内容 */
+  white-space: nowrap; /* 不换行 */
 }
 
 .log-item-header .log-item-user {
-  width: 150px;
+  width: 130px;
   background: white;
+  padding: 0 10px;
 }
 
 .log-item-header .log-item-datetime {
-  width: 200px;
+  width: 150px;
   background: gray;
+  padding: 0 10px;
 }
 
 .log-item-header .log-item-down {
+  width: 30px;
+  height: 30px;
+  margin: 0 15px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center; /* 同时水平和垂直居中 */
+  cursor: pointer;
+  background: #f8c3d3;
+}
 
+.log-item-header .log-item-down:hover {
+  background: #f4b4c9;
+}
+
+.log-item-header .log-item-down:active {
+  background: #e996b7;
 }

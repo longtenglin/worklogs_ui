@@ -1,8 +1,11 @@
 <div class="work-log-item">
   <div class="work-log-header">
-    <app-log-item-header/>
+    <mat-card appearance="raised" class="ltl-body-card">
+      <app-log-item-header [logType]="LogType.BUG" (isExpandChange)="isExpandChange($event)"/>
+    </mat-card>
   </div>
-  <div class="work-log-content">
-
+  <div class="work-log-content" *ngIf="isExpanded">
+    <mat-card appearance="raised" class="log-body-card">
+    </mat-card>
   </div>
 </div>
