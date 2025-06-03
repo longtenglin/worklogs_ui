@@ -4,7 +4,7 @@
       <app-log-item-header [logType]="LogType.BUG" (isExpandChange)="isExpandChange($event)"/>
     </mat-card>
   </div>
-  <div class="work-log-content" *ngIf="isExpanded">
+  <div class="work-log-content" *ngIf="isExpanded" @isExpandedAnim>
     <mat-card appearance="raised" class="log-body-card">
     </mat-card>
   </div>
