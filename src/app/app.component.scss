@@ -8,10 +8,12 @@
 
 .ltl-left-menu {width: 300px;}
 
-.ltl-body {flex: 1;display: flex;flex-direction: column;}
+.ltl-body {height: 100%;}
+
+.ltl-body {flex: 1; display: flex;flex-direction: column;}
 
 .ltl-body .ltl-body-header {width: 100%;height: 60px;background: var(--mat-sys-primary-container);}
-
+.ltl-body .ltl-body-container {height: 100%;};
 .ltl-body .ltl-body-container {flex: 1; padding: 10px 20px; display: flex;}
 
-.ltl-body .ltl-body-card {flex: 1;}
+.ltl-body .ltl-body-card {height: 100%; flex: 1; display: flex; overflow: auto;}
