@@ -3,7 +3,7 @@ import {MatFormField, MatOption, MatSelect} from '@angular/material/select';
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {LogType} from '../../common/ltl-log-type/ltl-log-type.component';
 import {MatError, MatInput, MatLabel} from '@angular/material/input';
-import {QuillEditorComponent} from 'ngx-quill';
+import {QuillEditorComponent, QuillViewHTMLComponent} from 'ngx-quill';
 import {MatChip} from '@angular/material/chips';
 import {MatButton} from '@angular/material/button';
 
@@ -26,6 +26,7 @@ type LogTypeOption = {
         FormsModule,
         MatChip,
         MatButton,
+        QuillViewHTMLComponent,
     ],
     standalone: true,
     templateUrl: './add-work-log.html',
@@ -74,4 +75,14 @@ export class AddWorkLogComponent {
             ['link', 'image', 'video']                         // 链接、图片和视频
         ]
     };
+
+    getLogTypeName(value: LogType | null): string {
+        if (value) {
+            return "DEFAULT";
+        }
+
+        return (this.logTypeOptionArr.find(item => {
+            return item.value === value;
+        }) as LogTypeOption).name;
+    }
 }

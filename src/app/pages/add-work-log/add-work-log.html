@@ -21,26 +21,34 @@
                 <button class="submit-button" matButton="outlined">Submit</button>
             </div>
         } @else {
-            <mat-chip class="work-log-type">{{ 'BUG' }}</mat-chip>
+            <mat-chip class="work-log-type">{{ getLogTypeName(logTypeControl.value) }}</mat-chip>
         }
     </div>
     <div class="add-log-title">
-        <mat-form-field class="log-title-input">
-            <mat-label>Title</mat-label>
-            <input type="text"
-                   matInput
-                   [formControl]="logTitleControl">
-            @if (logTitleControl.hasError("required")) {
-                <mat-error>You must make a selection</mat-error>
-            }
-        </mat-form-field>
+        @if (isEditor) {
+            <mat-form-field class="log-title-input">
+                <mat-label>Title</mat-label>
+                <input type="text"
+                       matInput
+                       [formControl]="logTitleControl">
+                @if (logTitleControl.hasError("required")) {
+                    <mat-error>You must make a selection</mat-error>
+                }
+            </mat-form-field>
+        } @else {
+            <h1>
+                {{logTitleControl.value}}
+            </h1>
+        }
     </div>
     <div class="add-log-content">
-        <quill-editor class="markdown-editor"
-                      [(ngModel)]="editorContent"
-                      [modules]="quillModules">
-        </quill-editor>
-
-<!--        <quill-view-html [content]="editorContent" theme="snow"></quill-view-html>-->
+        @if (isEditor) {
+            <quill-editor class="markdown-editor"
+                          [(ngModel)]="editorContent"
+                          [modules]="quillModules">
+            </quill-editor>
+        } @else {
+            <quill-view-html [content]="editorContent" theme="snow"></quill-view-html>
+        }
     </div>
 </div>
