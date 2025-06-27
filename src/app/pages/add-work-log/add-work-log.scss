@@ -1,0 +1,38 @@
+.add-work-log .work-log-type {width: 80px;height: 35px;text-align: center;}
+.add-work-log span[matchipaction] { width: 100% }
+.add-work-log .add-log-type {display: flex; flex-direction: row}
+.add-work-log .add-log-type .div-select {
+    flex: 1;
+
+    .mat-mdc-form-field-flex {
+        height: 40px;
+    }
+
+    .mat-mdc-form-field-infix {
+        height: 40px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+.add-work-log .add-log-type .div-button {
+    padding-left: 20px;
+
+    .mat-mdc-button-touch-target {
+        height: 40px;
+    }
+}
+
+.log-title-input {
+  width: 100%;
+}
+
+.add-work-log .add-log-content {
+    display: flex;
+}
+.add-work-log .add-log-content .markdown-editor {
+    flex: 1;
+}
+:root {
+    --mat-sys-corner-full: 10px;
+}

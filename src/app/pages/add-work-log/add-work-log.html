@@ -1,1 +1,46 @@
+<div class="add-work-log">
+    <div class="add-log-type margin-top-1">
+        @if (isEditor) {
+            <div class="div-select">
+                <mat-form-field class="log-type-select">
+                    <mat-select [formControl]="logTypeControl">
+                        <mat-option></mat-option>
+                        @for (logType of logTypeOptionArr; track logType.name) {
+                            <mat-option [value]="logType.value">{{ logType.name }}</mat-option>
+                        }
+                    </mat-select>
+                    @if (logTypeControl.hasError("required")) {
+                        <mat-error>You must make a selection</mat-error>
+                    }
+                </mat-form-field>
+            </div>
+            <div class="div-button">
+                <button class="preview-button" matButton="outlined">Preview</button>
+            </div>
+            <div class="div-button">
+                <button class="submit-button" matButton="outlined">Submit</button>
+            </div>
+        } @else {
+            <mat-chip class="work-log-type">{{ 'BUG' }}</mat-chip>
+        }
+    </div>
+    <div class="add-log-title">
+        <mat-form-field class="log-title-input">
+            <mat-label>Title</mat-label>
+            <input type="text"
+                   matInput
+                   [formControl]="logTitleControl">
+            @if (logTitleControl.hasError("required")) {
+                <mat-error>You must make a selection</mat-error>
+            }
+        </mat-form-field>
+    </div>
+    <div class="add-log-content">
+        <quill-editor class="markdown-editor"
+                      [(ngModel)]="editorContent"
+                      [modules]="quillModules">
+        </quill-editor>
 
+<!--        <quill-view-html [content]="editorContent" theme="snow"></quill-view-html>-->
+    </div>
+</div>

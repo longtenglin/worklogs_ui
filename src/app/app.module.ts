@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {provideMarkdown} from 'ngx-markdown';
+import {QuillModule} from 'ngx-quill';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import {provideMarkdown} from 'ngx-markdown';
     MatSlideToggleModule,
     LtlLeftNavigatorComponent,
     MatCard,
+    QuillModule.forRoot(),
   ],
   providers: [
     provideAnimationsAsync(),
