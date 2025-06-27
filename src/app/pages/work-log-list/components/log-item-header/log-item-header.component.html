@@ -16,7 +16,10 @@
   </div>
 
   <div class="log-item-down" (click)="isExpandEvent()">
-    <mat-icon *ngIf="!isExpanded">expand_more</mat-icon>
-    <mat-icon *ngIf="isExpanded">expand_less</mat-icon>
+      @if (isExpanded) {
+          <mat-icon>expand_less</mat-icon>
+      } @else {
+          <mat-icon>expand_more</mat-icon>
+      }
   </div>
 </div>

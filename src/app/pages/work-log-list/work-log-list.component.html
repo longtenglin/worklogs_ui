@@ -1,7 +1,7 @@
 <div class="work-log-list">
   <div class="work-log-body">
-    <ng-template ngFor let-item [ngForOf]="_worklogs">
-      <app-work-log-item></app-work-log-item>
-    </ng-template>
+      @for (item of _worklogs; track item) {
+          <app-work-log-item></app-work-log-item>
+      }
   </div>
 </div>
