@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import {LogItemHeaderComponent} from '../log-item-header/log-item-header.component';
 import {MatCard} from '@angular/material/card';
 import {LogType} from '../../../../common/ltl-log-type/ltl-log-type.component';
-import {NgIf} from '@angular/common';
 import {transition, trigger, useAnimation} from '@angular/animations';
 import {LTL_ANIMATION} from '../../../../common/ltl-animation/ltl-animation';
+import {MarkdownComponent} from 'ngx-markdown';
 
 @Component({
   selector: 'app-work-log-item',
   imports: [
     LogItemHeaderComponent,
     MatCard,
-    NgIf
+    MarkdownComponent,
   ],
   animations: [
     trigger("isExpandedAnim", [
@@ -29,7 +29,13 @@ export class WorkLogItemComponent {
 
   isExpanded = false;
 
+  mdText = ""
+
   isExpandChange(event: boolean) {
     this.isExpanded = event;
+  }
+
+  textareaChange(event: Event) {
+    this.mdText = (event.target as HTMLInputElement).value;
   }
 }

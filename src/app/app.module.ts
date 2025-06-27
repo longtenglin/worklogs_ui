@@ -7,6 +7,7 @@ import {MatCard} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import {provideMarkdown} from 'ngx-markdown';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,10 +17,11 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
     AppRoutingModule,
     MatSlideToggleModule,
     LtlLeftNavigatorComponent,
-    MatCard
+    MatCard,
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideMarkdown()
   ],
   bootstrap: [AppComponent],
 })
