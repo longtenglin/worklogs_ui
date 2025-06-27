@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import {WorkLogItemComponent} from './components/work-log-item/work-log-item.component';
-import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-work-log-list',
   imports: [
     WorkLogItemComponent,
-    NgForOf,
   ],
   templateUrl: './work-log-list.component.html',
   standalone: true,
