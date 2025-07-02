@@ -5,7 +5,7 @@ import {AddWorkLogComponent} from './pages/add-work-log/add-work-log';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'addWorkLog',
     component: AddWorkLogComponent,
   },
   {
