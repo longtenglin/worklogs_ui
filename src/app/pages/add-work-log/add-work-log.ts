@@ -36,6 +36,7 @@ type LogTypeOption = {
 export class AddWorkLogComponent {
 
     logTypeControl = new FormControl<LogType | null>(null, Validators.required);
+
     logTitleControl = new FormControl<String | null>(null, Validators.required);
 
     editorContent: string = "";
@@ -76,13 +77,29 @@ export class AddWorkLogComponent {
         ]
     };
 
+    readonly _CompInfo = {
+        BTN_PREVIEW: {
+            text: "Preview"
+        }
+        , BTN_BACK: {
+            text: "Back"
+        }
+        , BTN_SUBMIT: {
+            text: "Submit"
+        }
+    }
+
     getLogTypeName(value: LogType | null): string {
-        if (value) {
+        if (!value) {
             return "DEFAULT";
         }
 
         return (this.logTypeOptionArr.find(item => {
             return item.value === value;
         }) as LogTypeOption).name;
+    }
+
+    modifyEditorStatus() {
+        this.isEditor = !this.isEditor;
     }
 }

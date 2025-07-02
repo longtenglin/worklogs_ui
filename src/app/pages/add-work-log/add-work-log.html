@@ -1,7 +1,7 @@
 <div class="add-work-log">
     <div class="add-log-type margin-top-1">
-        @if (isEditor) {
-            <div class="div-select">
+        <div class="div-select">
+            @if (isEditor) {
                 <mat-form-field class="log-type-select">
                     <mat-select [formControl]="logTypeControl">
                         <mat-option></mat-option>
@@ -13,16 +13,22 @@
                         <mat-error>You must make a selection</mat-error>
                     }
                 </mat-form-field>
-            </div>
-            <div class="div-button">
-                <button class="preview-button" matButton="outlined">Preview</button>
-            </div>
-            <div class="div-button">
-                <button class="submit-button" matButton="outlined">Submit</button>
-            </div>
-        } @else {
-            <mat-chip class="work-log-type">{{ getLogTypeName(logTypeControl.value) }}</mat-chip>
-        }
+            } @else {
+                <mat-chip class="work-log-type">{{ getLogTypeName(logTypeControl.value) }}</mat-chip>
+            }
+        </div>
+        <div class="div-button">
+            <button class="preview-button"
+                    matButton="outlined"
+                    (click)="modifyEditorStatus()">
+                {{ isEditor ? _CompInfo.BTN_PREVIEW.text : _CompInfo.BTN_BACK.text }}
+            </button>
+        </div>
+        <div class="div-button">
+            <button class="submit-button" matButton="outlined">
+                {{ _CompInfo.BTN_SUBMIT.text }}
+            </button>
+        </div>
     </div>
     <div class="add-log-title">
         @if (isEditor) {
@@ -36,9 +42,9 @@
                 }
             </mat-form-field>
         } @else {
-            <h1>
+            <h3 class="log-title-h1">
                 {{logTitleControl.value}}
-            </h1>
+            </h3>
         }
     </div>
     <div class="add-log-content">
@@ -48,7 +54,10 @@
                           [modules]="quillModules">
             </quill-editor>
         } @else {
-            <quill-view-html [content]="editorContent" theme="snow"></quill-view-html>
+            <quill-view-html class="markdown-view"
+                             [content]="editorContent"
+                             theme="snow">
+            </quill-view-html>
         }
     </div>
 </div>

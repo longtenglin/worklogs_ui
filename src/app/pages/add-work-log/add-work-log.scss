@@ -27,12 +27,29 @@
   width: 100%;
 }
 
+.log-title-h1 {
+    height: 56px;
+    line-height: 56px;
+    padding: 0 15px;
+    background: var(--mat-form-field-filled-container-color, var(--mat-sys-surface-variant));
+    border-top-left-radius: var(--mat-form-field-filled-container-shape, var(--mat-sys-corner-extra-small));
+    border-top-right-radius: var(--mat-form-field-filled-container-shape, var(--mat-sys-corner-extra-small));
+    border-bottom: 1px black solid;
+}
+
 .add-work-log .add-log-content {
     display: flex;
+    min-height: 300px
 }
 .add-work-log .add-log-content .markdown-editor {
     flex: 1;
 }
+
+.add-work-log .add-log-content .markdown-view {
+    flex: 1;
+    border: 1px #ccc solid;
+}
+
 :root {
     --mat-sys-corner-full: 10px;
 }
