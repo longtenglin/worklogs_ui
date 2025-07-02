@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {AddWorkLogComponent} from './add-work-log';
 
-import { AddWorkLog } from './add-work-log';
+
 
 describe('AddWorkLog', () => {
-  let component: AddWorkLog;
-  let fixture: ComponentFixture<AddWorkLog>;
+  let component: AddWorkLogComponent;
+  let fixture: ComponentFixture<AddWorkLogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddWorkLog]
+      imports: [AddWorkLogComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddWorkLog);
+    fixture = TestBed.createComponent(AddWorkLogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
